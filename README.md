@@ -88,6 +88,7 @@ You may add the following special (and optional) properties to the JSON object, 
 
 `"fjs-fieldName":"someName"` upon submit, when form data is collected and urlencoded, `someName` will be used instead of the input `id` attribute, as key in the key-value pair
 
+Custom properties are NOT set as attributes in the generated DOM element.
 
 ### What about selects?
 ```
@@ -105,5 +106,3 @@ To create a select element, specify a `fjs-options` property (array of objects) 
 
 ### WIP
 This is a work in progress, guys. Don't expect it to be perfect or to immediately suit all your needs. It's an experiment, so treat it as such :)
-
-          
