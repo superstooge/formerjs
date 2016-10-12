@@ -42,11 +42,11 @@ A minimal setup would require the following:
 ```
 
 ### What does it do?
-Once loaded and instantiated, Former will build the form and add it to the DOM.
+Once loaded, Former will build the form and add it to the DOM.
 Upon submit, Former will:
-  1. make a XHR request with the defined `method` to the `action` url
-  2. send the *urlencoded* form data to the endpoint (in the key-values pairs, *key* will be the `id` attribute of the input field)
-  3. trigger the `submitSuccessCallBack` or the `submitErrorCallBack`, based on the outcome.
+1. make a XHR request with the defined `method` to the `action` url
+2. send the *urlencoded* form data to the endpoint (in the key-values pairs, *key* will be the `id` attribute of the input field)
+3. trigger the `submitSuccessCallBack` or the `submitErrorCallBack`, based on the outcome.
 
     **Make sure to define your callbacks and pass their names in the JSON object, in order to trigger the appropriate actions after submittting.**
 
@@ -87,3 +87,23 @@ You may add the following special (and optional) properties to the JSON object, 
 `"fjs-parent":"someElementID"` the input element will be attached to the DOM element with `id="someElementID"`, rather than to the one passed in the Former constructor
 
 `"fjs-fieldName":"someName"` upon submit, when form data is collected and urlencoded, `someName` will be used instead of the input `id` attribute, as key in the key-value pair
+
+
+### What about selects?
+```
+{
+            "id":"mySelect",
+            "type":"select",
+            "fjs-options":[
+              {"data":"", "text":"Choose a product"},
+              {"data":"p1", "text":"Product One"},
+              {"data":"p2", "text":"Product Two"}
+            ]
+          }
+```
+To create a select element, specify a `fjs-options` property (array of objects) in your JSON field element.
+
+### WIP
+This is a work in progress, guys. Don't expect it to be perfect or to immediately suit all your needs. It's an experiment, so treat it as such :)
+
+          
