@@ -1,0 +1,68 @@
+[
+  {
+
+    "method":"POST",
+    "action":"http://localhost/playground/former/fakeapi.php",
+    "submitSuccessCallBack":"onSubmitSuccess",
+    "submitErrorCallBack":"onSubmitError",
+    "fields":[
+          {
+            "id":"name",
+            "type":"text",
+            "fjs-validate":"checkName",
+            "class":"form-control",
+            "fjs-parent":"col1",
+            "placeholder":"Type text here"
+
+          },
+          {
+            "id":"category",
+            "type":"select",
+            "fjs-options":[
+              {"data":"", "text":"Choose a product"},
+              {"data":"1", "text":"ProductOne"},
+              {"data":"2", "text":"Product Two"}
+            ],
+            "fjs-fieldName":"product",
+            "fjs-validate":"checkProduct",
+            "required":"",
+            "class":"form-control",
+            "fjs-parent":"col2"
+          },
+          {
+            "id":"day",
+            "type":"date",
+            "class":"form-control",
+            "required":"",
+            "emptyFieldMessage":"Please select a date",
+            "fjs-parent":"col3"
+          },
+          {
+            "id":"remember",
+            "type":"radio",
+            "name":"radioGroup",
+            "label":"Remember me",
+            "class":"radio-inline white",
+            "value":"remember",
+            "checked":"",
+            "fjs-parent":"col3"
+          },
+          {
+            "id":"remember2",
+            "type":"radio",
+            "name":"radioGroup",
+            "label":"Do NOT Remember me",
+            "class":"radio-inline white",
+            "value":"remember",
+            "fjs-parent":"col3"
+          },
+          {
+            "id":"sub",
+            "type":"submit",
+            "class":"btn btn-info",
+            "value":"submit"
+          }
+    ]
+
+  }
+]
