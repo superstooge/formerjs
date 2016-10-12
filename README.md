@@ -35,6 +35,10 @@ A minimal setup would require the following:
             "type":"submit",
             "value":"submit"
           }
+    ]
+
+  }
+]
 ```
 
 ### What does it do?
