@@ -2,7 +2,7 @@
   {
 
     "method":"POST",
-    "action":"http://localhost/playground/former/fakeapi.php",
+    "action":"http://fcarbone.info/utils/fakeapi.php",
     "submitSuccessCallBack":"onSubmitSuccess",
     "submitErrorCallBack":"onSubmitError",
     "fields":[
@@ -14,7 +14,7 @@
           },
           {
             "id":"name",
-            "type":"text",
+            "type":"email",
             "fjs-validate":"checkName",
             "class":"form-control",
             "fjs-parent":"col1",
@@ -33,7 +33,7 @@
             "fjs-options":[
               {"data":"", "text":"Choose a product"},
               {"data":"1", "text":"ProductOne"},
-              {"data":"2", "text":"Product Two"}
+              {"data":"2", "text":"Product Two", "selected":true}
             ],
             "fjs-fieldName":"product",
             "fjs-validate":"checkProduct",

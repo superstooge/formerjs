@@ -60,6 +60,9 @@ Former.prototype.render = function(){
           var opt = document.createElement("option")
           opt.data = this.struc[i]["fjs-options"][j].data;
           opt.text = this.struc[i]["fjs-options"][j].text;
+          if (this.struc[i]["fjs-options"][j].hasOwnProperty("selected") && this.struc[i]["fjs-options"][j].selected === true) {
+            opt.setAttribute("selected", "selected")
+          }
           node.appendChild(opt);
         }
         break;
@@ -111,7 +114,9 @@ Former.prototype.render = function(){
 
 
 
-Former.prototype.validate = function(){
+Former.prototype.validate = function(e){
+  e.preventDefault();
+  e.stopPropagation();
   var v = true;
   for (var i = 0; i < this.struc.length; i++) {
     var attributesObj = this.struc[i];
