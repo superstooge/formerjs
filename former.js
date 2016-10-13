@@ -111,8 +111,8 @@ Former.prototype.validate = function(){
 
       if (item.value === '') {
         v = false;
-        if (attributesObj.hasOwnProperty("emptyFieldMessage")) {
-          alert(attributesObj["emptyFieldMessage"]);
+        if (attributesObj.hasOwnProperty("fjs-emptyFieldCallBack")) {
+          this.namespace[attributesObj["fjs-emptyFieldCallBack"]](item);
         }
         item.focus();
       }
