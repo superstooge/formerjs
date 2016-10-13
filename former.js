@@ -132,7 +132,7 @@ Former.prototype.validate = function(e){
         return;
       }
     }
-      if (attributesObj.hasOwnProperty("fjs-validate")) {
+      if (attributesObj.hasOwnProperty("fjs-validate") && attributesObj["fjs-validate"]!=='') {
         try {
           v = this.namespace[attributesObj["fjs-validate"]](item);
         } catch (e) {
