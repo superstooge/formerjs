@@ -52,16 +52,23 @@ Former.prototype.render = function(){
   for (var i = 0; i < this.struc.length; i++) {
     nodeParent = this.parentEl;
     var node;
-    if (this.struc[i].type === 'select') {
-      node = document.createElement("select")
-      for (var j = 0; j < this.struc[i]["fjs-options"].length; j++) {
-        var opt = document.createElement("option")
-        opt.data = this.struc[i]["fjs-options"][j].data;
-        opt.text = this.struc[i]["fjs-options"][j].text;
-        node.appendChild(opt);
-      }
-    } else {
-      node = document.createElement("input");
+
+    switch (this.struc[i].type) {
+      case 'select':
+        node = document.createElement("select")
+        for (var j = 0; j < this.struc[i]["fjs-options"].length; j++) {
+          var opt = document.createElement("option")
+          opt.data = this.struc[i]["fjs-options"][j].data;
+          opt.text = this.struc[i]["fjs-options"][j].text;
+          node.appendChild(opt);
+        }
+        break;
+        case 'textarea':
+          node = document.createElement("textarea");
+          break;
+      default:
+        node = document.createElement("input");
+
     }
 
     var attributesObj = this.struc[i];

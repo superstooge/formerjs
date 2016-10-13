@@ -32,6 +32,15 @@
             "fjs-parent":"col2"
           },
           {
+            "id":"comment",
+            "type":"textarea",
+            "class":"form-control",
+            "fjs-parent":"col2",
+            "rows":"5",
+            "placeholder":"Type long text here"
+
+          },
+          {
             "id":"day",
             "type":"date",
             "class":"form-control",
