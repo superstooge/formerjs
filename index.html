@@ -54,14 +54,18 @@
       }
 
       function checkProduct(node) {
-        if (node.options[node.selectedIndex].data === '') {
-          alert("please choose a product");
+        if (node.options[node.selectedIndex].data !== '2') {
+          alert("please choose product two");
           node.focus();
           return false;
         } else {
           return true;
         }
 
+      }
+
+      function fillProduct(el) {
+        alert("please choose a product");
       }
 
       function onSubmitSuccess() {

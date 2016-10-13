@@ -109,12 +109,13 @@ Former.prototype.validate = function(){
     var item = document.getElementById(this.struc[i].id);
     if (attributesObj.hasOwnProperty("required")) {
 
-      if (item.value === '') {
+      if (item.value === '' || item.options && item.selectedIndex === 0) {
         v = false;
         if (attributesObj.hasOwnProperty("fjs-emptyFieldCallBack")) {
           this.namespace[attributesObj["fjs-emptyFieldCallBack"]](item);
         }
         item.focus();
+        return;
       }
     }
       if (attributesObj.hasOwnProperty("fjs-validate")) {

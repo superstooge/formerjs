@@ -26,6 +26,7 @@
             "fjs-fieldName":"product",
             "fjs-validate":"checkProduct",
             "required":"",
+            "fjs-emptyFieldCallBack":"fillProduct",
             "class":"form-control",
             "fjs-parent":"col2"
           },
