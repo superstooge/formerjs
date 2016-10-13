@@ -100,18 +100,11 @@ Former.prototype.render = function(){
       }
     }
 
-    nodeParent.appendChild(node);
-    // if (attributesObj.hasOwnProperty("label")) {
-    //   var lab = document.createElement("label");
-    //   lab.innerHTML = attributesObj["label"];
-    //   lab.setAttribute("for", attributesObj["id"])
-    //   nodeParent.appendChild(lab);
-    //   lab.insertBefore(node, lab.firstChild);
-    //
-    //   // move class attribute from node to label
-    //   lab.setAttribute("class",node.getAttribute("class"));
-    //   node.setAttribute("class", "")
-    // }
+    if (nodeParent.nodeName === 'LABEL') {
+      nodeParent.insertBefore(node, nodeParent.firstChild);
+    } else {
+      nodeParent.appendChild(node);
+    }
 
   }
 }

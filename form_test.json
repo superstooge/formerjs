@@ -23,6 +23,13 @@
 
           },
           {
+            "id":"",
+            "type":"label",
+            "for":"category",
+            "fjs-content":"Product",
+            "fjs-parent":"col2"
+          },
+          {
             "id":"category",
             "type":"select",
             "fjs-options":[
@@ -39,6 +46,13 @@
             "fjs-parent":"col2"
           },
           {
+            "id":"",
+            "type":"label",
+            "for":"comment",
+            "fjs-content":"Add a comment",
+            "fjs-parent":"col2"
+          },
+          {
             "id":"comment",
             "type":"textarea",
             "class":"form-control",
@@ -46,6 +60,13 @@
             "rows":"5",
             "placeholder":"Type long text here"
 
+          },
+          {
+            "id":"",
+            "type":"label",
+            "for":"day",
+            "fjs-content":"Pick a day",
+            "fjs-parent":"col3"
           },
           {
             "id":"day",
@@ -56,9 +77,10 @@
             "fjs-parent":"col3"
           },
           {
-            "id":"",
+            "id":"labelRemember",
             "type":"label",
             "for":"remember",
+            "class":"radio-inline ",
             "fjs-content":"Remember me",
             "fjs-parent":"col3"
           },
@@ -66,15 +88,16 @@
             "id":"remember",
             "type":"radio",
             "name":"radioGroup",
-            "class":"radio white",
+            "class":" white",
             "value":"remember",
             "checked":"",
-            "fjs-parent":"col3"
+            "fjs-parent":"labelRemember"
           },
           {
-            "id":"",
+            "id":"labelRemember2",
             "type":"label",
             "for":"remember2",
+            "class":"radio-inline ",
             "fjs-content":"Do NOT remember me",
             "fjs-parent":"col3"
           },
@@ -82,9 +105,9 @@
             "id":"remember2",
             "type":"radio",
             "name":"radioGroup",
-            "class":"radio white",
+            "class":" white",
             "value":"remember",
-            "fjs-parent":"col3"
+            "fjs-parent":"labelRemember2"
           },
           {
             "id":"sub",
