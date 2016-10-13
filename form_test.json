@@ -7,6 +7,13 @@
     "submitErrorCallBack":"onSubmitError",
     "fields":[
           {
+            "id":"",
+            "type":"label",
+            "for":"name",
+            "fjs-content":"Name",
+            "fjs-parent":"col1"
+          },
+          {
             "id":"name",
             "type":"text",
             "fjs-validate":"checkName",
@@ -49,21 +56,33 @@
             "fjs-parent":"col3"
           },
           {
+            "id":"",
+            "type":"label",
+            "for":"remember",
+            "fjs-content":"Remember me",
+            "fjs-parent":"col3"
+          },
+          {
             "id":"remember",
             "type":"radio",
             "name":"radioGroup",
-            "label":"Remember me",
-            "class":"radio-inline white",
+            "class":"radio white",
             "value":"remember",
             "checked":"",
+            "fjs-parent":"col3"
+          },
+          {
+            "id":"",
+            "type":"label",
+            "for":"remember2",
+            "fjs-content":"Do NOT remember me",
             "fjs-parent":"col3"
           },
           {
             "id":"remember2",
             "type":"radio",
             "name":"radioGroup",
-            "label":"Do NOT Remember me",
-            "class":"radio-inline white",
+            "class":"radio white",
             "value":"remember",
             "fjs-parent":"col3"
           },

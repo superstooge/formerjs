@@ -85,6 +85,12 @@ Former.prototype.render = function(){
       node.addEventListener("click", this.validate.bind(this));
     }
 
+    // innerHTML defined ?
+    if (attributesObj["fjs-content"] !== undefined) {
+      node.innerHTML = attributesObj["fjs-content"];
+    }
+
+
     // node parent element defined ?
     if (attributesObj["fjs-parent"] !== undefined) {
       nodeParent = document.getElementById(attributesObj["fjs-parent"]);
