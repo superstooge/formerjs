@@ -2,7 +2,7 @@
   {
 
     "method":"POST",
-    "action":"http://fcarbone.info/utils/fakeapi.php",
+    "action":"./fakeapi.php",
     "submitSuccessCallBack":"onSubmitSuccess",
     "submitErrorCallBack":"onSubmitError",
     "fields":[

@@ -119,6 +119,8 @@ Former.prototype.validate = function(e){
   e.stopPropagation();
   var v = true;
   for (var i = 0; i < this.struc.length; i++) {
+    
+
     var attributesObj = this.struc[i];
     var item = document.getElementById(this.struc[i].id);
     if (attributesObj.hasOwnProperty("required")) {
