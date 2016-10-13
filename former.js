@@ -162,18 +162,20 @@ Former.prototype.validate = function(e){
 Former.prototype.harvest = function(){
   var urlEncodedData = "";
   var urlEncodedDataPairs = [];
+
   for (var i = 0; i < this.struc.length; i++) {
     // skip submit and labels
     if (this.struc[i].type.toLowerCase() === 'submit' || this.struc[i].type.toLowerCase() === 'label') {
       continue;
     }
+
+    var item = document.getElementById(this.struc[i].id);
+
     // skip disabled elements
     if (item.hasAttribute("disabled")) {
       continue;
     }
-
-
-    var item = document.getElementById(this.struc[i].id);
+    
     var itemValue = item.value;
     if (this.struc[i].type === 'checkbox' || this.struc[i].type === 'radio') {
       itemValue = item.checked;

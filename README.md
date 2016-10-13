@@ -114,7 +114,7 @@ To create a select element, specify a `fjs-options` property (array of objects) 
             "fjs-content":"Name"
           }
 ```
-A label element has a `fjs-content` property that defines the label text
+A label element has a `fjs-content` property that defines the label text. You may optionally add an `id` property if you want to append an input element to the label (i.e. checkboxes or radio buttons)
 
 #### textarea
 ```
