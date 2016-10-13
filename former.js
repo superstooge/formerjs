@@ -119,7 +119,7 @@ Former.prototype.validate = function(e){
   e.stopPropagation();
   var v = true;
   for (var i = 0; i < this.struc.length; i++) {
-    
+
 
     var attributesObj = this.struc[i];
     var item = document.getElementById(this.struc[i].id);
@@ -156,7 +156,7 @@ Former.prototype.harvest = function(){
   var urlEncodedDataPairs = [];
   for (var i = 0; i < this.struc.length; i++) {
     // skip submit
-    if (this.struc[i].type.toLowerCase() === 'submit' ||  'label') {
+    if (this.struc[i].type.toLowerCase() === 'submit' || this.struc[i].type.toLowerCase() === 'label') {
       continue;
     }
     var item = document.getElementById(this.struc[i].id);
