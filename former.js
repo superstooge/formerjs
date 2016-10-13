@@ -149,7 +149,7 @@ Former.prototype.harvest = function(){
   var urlEncodedDataPairs = [];
   for (var i = 0; i < this.struc.length; i++) {
     // skip submit
-    if (this.struc[i].type === 'submit') {
+    if (this.struc[i].type.toLowerCase() === 'submit' ||  'label') {
       continue;
     }
     var item = document.getElementById(this.struc[i].id);
