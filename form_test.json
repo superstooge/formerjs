@@ -26,8 +26,8 @@
             "fjs-fieldName":"product",
             "fjs-validate":"checkProduct",
             "required":"",
-            "onChange":"onSelectChange(this)",
             "fjs-emptyFieldCallBack":"fillProduct",
+            "onChange":"onSelectChange(this)",
             "class":"form-control",
             "fjs-parent":"col2"
           },
