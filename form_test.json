@@ -7,7 +7,6 @@
     "submitErrorCallBack":"onSubmitError",
     "fields":[
           {
-            "id":"",
             "type":"label",
             "for":"name",
             "fjs-content":"Name",
@@ -23,7 +22,6 @@
 
           },
           {
-            "id":"",
             "type":"label",
             "for":"category",
             "fjs-content":"Product",
@@ -46,7 +44,6 @@
             "fjs-parent":"col2"
           },
           {
-            "id":"",
             "type":"label",
             "for":"comment",
             "fjs-content":"Add a comment",
@@ -62,7 +59,6 @@
 
           },
           {
-            "id":"",
             "type":"label",
             "for":"day",
             "fjs-content":"Pick a day",
