@@ -68,6 +68,10 @@
         alert("please choose a product");
       }
 
+      function onSelectChange(e) {
+        console.log("selected", e.options[e.selectedIndex].value);
+      }
+
       function onSubmitSuccess() {
         alert("submit successful!")
       }
