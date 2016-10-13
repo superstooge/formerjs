@@ -90,19 +90,60 @@ You may add the following special (and optional) properties to the JSON object, 
 
 Custom properties are NOT set as attributes in the generated DOM element.
 
-### What about selects?
+### What about non-input elements?
+
+#### select element
 ```
-{
+          {
             "id":"mySelect",
             "type":"select",
             "fjs-options":[
               {"data":"", "text":"Choose a product"},
               {"data":"p1", "text":"Product One"},
-              {"data":"p2", "text":"Product Two"}
+              {"data":"p2", "text":"Product Two", "selected":true}
             ]
           }
 ```
 To create a select element, specify a `fjs-options` property (array of objects) in your JSON field element.
+
+#### label element
+```
+          {
+            "type":"label",
+            "for":"myInputID",
+            "fjs-content":"Name"
+          }
+```
+A label element has a `fjs-content` property that defines the label text
+
+#### textarea
+```
+          {
+            "id":"comment",
+            "type":"textarea",
+            "rows":"5"
+          }
+```
+Textareas are quite straightforward.
+
+### Inline styles and callbacks
+Since every property in the Object will be set as attribute in the element, you may define inline styles and callbacks directly in the JSON Object, as follows:
+
+```
+        {
+            "id":"name",
+            "type":"text",
+            "style":"width:100px;height:200px;",
+            "onclick":"myOnClickCallback()"
+          }
+```
+generates
+```
+<input type="text id="name" style="width:100px;height:200px;" onclick="myOnClickCallback()" />
+```
+This is useful for onFocus/onBlur events or onChange events.
+
+
 
 ### WIP
 This is a work in progress, guys. Don't expect it to be perfect or to immediately suit all your needs. It's an experiment, so treat it as such :)
