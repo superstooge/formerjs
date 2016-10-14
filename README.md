@@ -141,7 +141,7 @@ generates
 ```
 <input type="text id="name" style="width:100px;height:200px;" onclick="myOnClickCallback()" />
 ```
-This is useful for onFocus/onBlur events or onChange events. If you use this method, you must include the parenthesis in the callback, as in the above example.
+This is useful for onFocus/onBlur events or onChange events. **If you use this method, you must include the parenthesis in the callback, as in the above example**.
 
 
 ### Validating fields
