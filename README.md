@@ -157,6 +157,7 @@ There are two ways of validating a field.
           }
 ```
 The above will automatically invoke `fillName()` (defined in your code) and give focus to the input field if it has no value.
+Please note that *if `required` is not set, then `fjs-emptyFieldCallBack` will never be invoked!*
 
 2) **The custom way** is to set a `fjs-validate` property in your JSON Object and the name of a custom validation function.
 ```
