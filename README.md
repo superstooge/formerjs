@@ -134,12 +134,12 @@ Since every property in the Object will be set as attribute in the element, you 
             "id":"name",
             "type":"text",
             "style":"width:100px;height:200px;",
-            "onclick":"myOnClickCallback()"
+            "onclick":"myOnClickCallback(this)"
           }
 ```
 generates
 ```
-<input type="text id="name" style="width:100px;height:200px;" onclick="myOnClickCallback()" />
+<input type="text id="name" style="width:100px;height:200px;" onclick="myOnClickCallback(this)" />
 ```
 This is useful for onFocus/onBlur events or onChange events. **If you use this method, you must include the parenthesis in the callback, as in the above example**.
 
