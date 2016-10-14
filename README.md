@@ -141,9 +141,45 @@ generates
 ```
 <input type="text id="name" style="width:100px;height:200px;" onclick="myOnClickCallback()" />
 ```
-This is useful for onFocus/onBlur events or onChange events.
+This is useful for onFocus/onBlur events or onChange events. If you use this method, you must include the parenthesis in the callback, as in the above example.
 
 
+### Validating fields
+There are two ways of validating a field.
+
+1. **The easy way** (does **NOT** work for checkboxes and radio buttons) is to set a `required` property in your JSON Object and (optionally) a `fjs-emptyFieldCallBack` to invoke a custom function if the field is empty.
+```
+        {
+            "id":"name",
+            "type":"text",
+            "required":"",
+            "fjs-emptyFieldCallBack":"fillName"
+          }
+```
+The above will automatically invoke `fillName()` (defined in your code) and give focus to the input field if it has no value.
+
+2. **The custom way** is to set a `fjs-validate` property in your JSON Object and the name of a custom validation function.
+```
+        {
+            "id":"name",
+            "type":"text",
+            "fjs-validate":"validateName"
+          }
+```
+When you define `validateName` in your code, keep in mind that it will receive one parameter (a reference to the element being validated) and will have to return either true or false.
+```
+        function validateName(el) {
+          if (el.value === '') {
+            alert("please enter a name");
+            el.focus();
+            return false;
+          } else {
+            return true;
+          }
+        }
+```
+
+The easy and custom methods *can be used concurrently on the same element*. The library will *first check the easy way* and if validation passes, will proceed to the *custom one*.
 
 ### WIP
 This is a work in progress, guys. Don't expect it to be perfect or to immediately suit all your needs. It's an experiment, so treat it as such :)
