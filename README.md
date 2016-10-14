@@ -48,7 +48,7 @@ Upon submit, Former will:
 2. send the *urlencoded* form data to the endpoint (in the key-values pairs, *key* will be the `id` attribute of the input field)
 3. trigger the `submitSuccessCallBack` or the `submitErrorCallBack`, based on the outcome.
 
-    **Make sure to define your callbacks and pass their names in the JSON object, in order to trigger the appropriate actions after submittting.**
+**Make sure to define your callbacks and pass their names in the JSON object, in order to trigger the appropriate actions after submittting.**
 
 ### Additional properties for the JSON descriptor
 In the fields property of the JSON data, every `Object` represents a single `<input>` element.
