@@ -15,15 +15,13 @@ var Former = function (formData, parentEl){
 
 
 Former.prototype.loadData = function(file) {
-    // console.log("loadData");
     var xobj = new XMLHttpRequest();
-    xobj._this = this;
     xobj.open('GET', file, true);
     xobj.onreadystatechange = function () {
           if (xobj.readyState == 4 && xobj.status == "200") {
-            this._this.init(JSON.parse(xobj.responseText));
+            this.init(JSON.parse(xobj.responseText));
           }
-    };
+    }.bind(this);
     xobj.send(null);
  }
 
@@ -175,7 +173,7 @@ Former.prototype.harvest = function(){
     if (item.hasAttribute("disabled")) {
       continue;
     }
-    
+
     var itemValue = item.value;
     if (this.struc[i].type === 'checkbox' || this.struc[i].type === 'radio') {
       itemValue = item.checked;
@@ -190,19 +188,18 @@ Former.prototype.harvest = function(){
 Former.prototype.submit = function(){
   var data = this.harvest();
   var XHR = new XMLHttpRequest();
-  XHR._this = this;
   XHR.onreadystatechange = function() {
     if(XHR.readyState == 4 && XHR.status == 200) {
         console.log(XHR.responseText);
-        if (this._this.formObj.submitSuccessCallBack !== undefined) {
-          this._this.namespace[this._this.formObj.submitSuccessCallBack]();
+        if (this.formObj.submitSuccessCallBack !== undefined) {
+          this.namespace[this.formObj.submitSuccessCallBack]();
         }
     } else if (XHR.readyState == 4 && XHR.status >= 400) {
-      if (this._this.formObj.submitErrorCallBack !== undefined) {
-        this._this.namespace[this._this.formObj.submitErrorCallBack]();
+      if (this.formObj.submitErrorCallBack !== undefined) {
+        this.namespace[this.formObj.submitErrorCallBack]();
       }
     }
-  }
+  }.bind(this)
 
 
 
