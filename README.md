@@ -3,6 +3,7 @@
 FormerJS allows you to automatically build *simple* forms, based on a JSON object descriptor.
 The form will be attached to a root element, to be passed to the constructor.
 You may also attach every input element of the form to different DOM elements in your page, provided they have a unique id attribute.
+[Demo here](http://fcarbone.info/formerjs "FormerJS demo")
 
 ### Usage
 1. load former.js with a `<script>` tag in your page
