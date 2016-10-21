@@ -138,8 +138,11 @@
                   if (attributesObj.hasOwnProperty("fjs-emptyFieldCallBack")) {
                       this.namespace[attributesObj["fjs-emptyFieldCallBack"]](item);
                   }
-                  item.focus();
-                  return;
+
+                  if (stopOnValidationError.call(this)===true) {
+                    item.focus();
+                    return;
+                  }
               }
           }
           if (attributesObj.hasOwnProperty("fjs-validate") && attributesObj["fjs-validate"] !== '') {
@@ -148,15 +151,29 @@
               } catch (e) {
                   console.error("Error: function", this.namespace + "." + attributesObj["fjs-validate"], "is not defined");
               }
-              if (!v) {
+              if (!v && stopOnValidationError.call(this)===true) {
                   return
               }
           }
 
       }
+      if (this.formObj.hasOwnProperty("onValidationComplete")) {
+        this.namespace[this.formObj.onValidationComplete](v)
+      }
       if (v) {
           submit.call(this);
       }
+  }
+
+  function stopOnValidationError() {
+    if (this.formObj.hasOwnProperty("haltOnValidationError") && this.formObj.haltOnValidationError===true) {
+      return true
+    } else if (!this.formObj.hasOwnProperty("haltOnValidationError")){
+      return true
+    } else {
+      return false
+    }
+
   }
 
   function harvest() {
